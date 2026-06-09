@@ -40,11 +40,11 @@ def fetch_current_weather(city: str, api_key: str, units: str) -> dict:
 def main() -> None:
     st.set_page_config(page_title="Weather App", page_icon="cloud", layout="centered")
     st.title("Weather App")
-    st.write("Enter a city name to get the current weather. The API key is loaded from the .env file.")
+    st.write("Enter a city name to get the current weather.")
 
     api_key = os.getenv("OPENWEATHER_API_KEY")
 
-    city = st.text_input("Enter city name", value="London", help="Type a city name like London, New York, or Tokyo.")
+    city = st.text_input("Enter city name", value="Nagpur", help="Type a city name like London, New York, or Tokyo.")
     units = st.radio("Units", ["metric", "imperial"], index=0, format_func=lambda x: "Celsius (C)" if x == "metric" else "Fahrenheit (F)")
     unit_symbol = "C" if units == "metric" else "F"
 
